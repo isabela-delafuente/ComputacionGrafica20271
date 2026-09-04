@@ -65,8 +65,8 @@ int main() {
 		-0.5f,  0.5f, 0.0f,   1.0f,1.0f,0.0f, // top left 
 	};
 	unsigned int indices[] = {  // note that we start from 0!
-		3,1,0,// second Triangle
-		0,2,3,
+		3,2,1,// second Triangle
+		0,1,3,
 		
 	};
 
@@ -120,14 +120,14 @@ int main() {
         glBindVertexArray(VAO);
 
 
-        glPointSize(10);
-        glDrawArrays(GL_POINTS,0,4);
+        //glPointSize(7);
+        //glDrawArrays(GL_POINTS,0,4);
         
-        glDrawArrays(GL_LINES,0,4);
+        //glDrawArrays(GL_LINES,0,4);
         //glDrawArrays(GL_LINE_LOOP,0,4);
         
         //glDrawArrays(GL_TRIANGLES,0,3);
-        //glDrawElements(GL_TRIANGLES, 6,GL_UNSIGNED_INT,0);
+        glDrawElements(GL_TRIANGLES, 6,GL_UNSIGNED_INT,0);
 
         
         
