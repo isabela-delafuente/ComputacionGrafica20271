@@ -201,7 +201,9 @@ int main() {
 	glm::mat4 projection=glm::mat4(1);
 
 	projection = glm::perspective(45.0f, (GLfloat)screenWidth / (GLfloat)screenHeight, 0.1f, 100.0f);//FOV, Radio de aspecto,znear,zfar
+
 	//projection = glm::ortho(0.0f, (GLfloat)screenWidth, 0.0f, (GLfloat)screenHeight, 0.1f, 1000.0f);//Izq,Der,Fondo,Alto,Cercania,Lejania
+
 	while (!glfwWindowShouldClose(window))
 	{
 		// Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
@@ -219,16 +221,18 @@ int main() {
 		glm::mat4 view=glm::mat4(1);
 	
 	    view = glm::translate(view, glm::vec3(0.0f,0.0f,-50.0f));
+		//view = glm::translate( view, glm::vec3( screenWidth / 2, screenHeight / 2,-700.0f ) ); // use with orthographic projection
 		//Cubo 1
 		model = glm::rotate( model, 20.0f, glm::vec3( 1.0f, 1.0f, 1.0f ) ); // use to compare orthographic and perspective projection
 		model = glm::scale(model, glm::vec3(5.0f, 5.0f, 5.0f));
-		//view = glm::translate( view, glm::vec3( screenWidth / 2, screenHeight / 2,-700.0f ) ); // use with orthographic projection
 		
 		GLint modelLoc = glGetUniformLocation(ourShader.Program, "model");
 		GLint viewLoc = glGetUniformLocation(ourShader.Program, "view");
+
 		GLint projecLoc = glGetUniformLocation(ourShader.Program, "projection");
 		
 		glUniformMatrix4fv(projecLoc, 1, GL_FALSE, glm::value_ptr(projection));
+
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		
@@ -259,7 +263,6 @@ int main() {
 		model = glm::scale(model, glm::vec3(5.0f, 5.0f, 5.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
-
 
 		glBindVertexArray(0);
 
