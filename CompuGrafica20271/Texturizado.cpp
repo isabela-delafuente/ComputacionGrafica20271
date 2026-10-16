@@ -101,21 +101,30 @@ int main()
 	GLfloat vertices[] =
 	{
 		// Positions            // Colors              // Texture Coords
+
+		//mostrar sector 2 de la imagen
 		-0.5f, -0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.5f,0.0f,
 		0.5f, -0.5f, 0.0f,	   1.0f, 1.0f,1.0f,		1.0f,0.0f,
 		0.5f,  0.5f, 0.0f,     1.0f, 1.0f,1.0f,	    1.0f,0.5f,
 		-0.5f,  0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.5f,0.5f,
 
-		
+		//mostrar sector 4 de la imagen
 		-0.5f, -0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,0.5f,
 		0.5f, -0.5f, 0.0f,	   1.0f, 1.0f,1.0f,		0.5f,0.5f,
 		0.5f,  0.5f, 0.0f,     1.0f, 1.0f,1.0f,	    0.5f,1.0f,
 		-0.5f,  0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,1.0f,
 
+		//mostrar centro de la imagen
 		-0.5f, -0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.25f,0.25f,
 		0.5f, -0.5f, 0.0f,	   1.0f, 1.0f,1.0f,		0.75f,0.25f,
 		0.5f,  0.5f, 0.0f,     1.0f, 1.0f,1.0f,	    0.75f,0.75f,
 		-0.5f,  0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.25f,0.75f,
+
+		//Mostrar imagen repetida, 3.5 veces en x y 5.5 veces en y
+		-0.5f, -0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,0.5f,
+		0.5f, -0.5f, 0.0f,	   1.0f, 1.0f,1.0f,		3.5f,0.5f,
+		0.5f,  0.5f, 0.0f,     1.0f, 1.0f,1.0f,	    3.5f,6.0f,
+		-0.5f,  0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,6.0f,
 
 	};
 
