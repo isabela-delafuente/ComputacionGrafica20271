@@ -249,13 +249,10 @@ int main()
         model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
         glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         glBindVertexArray(VAO);
-
         red_dog.Draw(lightingShader);
-
         glBindVertexArray(0);
 
-
-
+        //modelo de luz 1
 
         lampshader.Use();
         glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
@@ -263,11 +260,7 @@ int main()
         model = glm::mat4(1.0f);
         model = glm::translate(model, lightPos + movelightPos);
         model = glm::scale(model, glm::vec3(0.3f));
-		
         glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-
-
-
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -277,10 +270,8 @@ int main()
         model = glm::translate(model, lightPos2 + movelightPos2);
         model = glm::scale(model, glm::vec3(0.3f));
         glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
-
         glBindVertexArray(0);
 
         // Swap the buffers
